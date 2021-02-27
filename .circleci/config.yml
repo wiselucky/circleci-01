@@ -19,7 +19,6 @@ jobs:
     steps:
       - checkout
       - run: echo "A more familiar hi"
-      - run: sleep 5
       - attach_workspace:
           # 絶対パスであるか、working_directory からの相対パスでなければなりません
           at: my_workspace
@@ -36,3 +35,5 @@ workflows:
     jobs:
       - one
       - two
+        requires:
+          - one
